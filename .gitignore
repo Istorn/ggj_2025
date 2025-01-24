@@ -1,0 +1,76 @@
+# ========== Unity-specific ==========
+
+# Ignore Auto-Generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Ignore Asset Store tools and packages cache
+/[Aa]ssets/[Aa]sset[Ss]tore[Uu]nity/
+
+# Ignore crash logs and diagnostic files
+*.stacktrace
+
+# Ignore compiled libraries
+/[Bb]in/
+
+# Ignore Unity-generated meta files
+/[Pp]roject[Ss]ettings/*.asset.meta
+
+# ========== OS-specific ==========
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ========== IDEs and Editors ==========
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Visual Studio
+.vscode/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.tmp
+
+# MonoDevelop
+*.pidb
+
+# ========== Version Control Specific ==========
+
+# Ignore Git merge conflict files
+*.orig
+
+# ========== User-specific ==========
+
+# Ignore log files and local data
+*.log
+*.pid
+*.csv
+*.tmp
+*.bak
+*.swp
+
+# ========== Unity Cache ==========
+
+# Ignore cache for Unity Collaborate
+/[Uu]ser[Ss]ettings/
+
