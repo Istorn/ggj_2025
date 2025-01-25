@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
@@ -6,34 +5,37 @@ public class CanvasManager : MonoBehaviour
 {
     public CanvasGroup blackoutCanvas;
     public float transitionTime;
-    private void Start()
-    {
-        met_BlackoutOff();
-    }
+    public bool isGameOver;
     public void met_BlackoutOff()
     {
         blackoutCanvas.alpha = 0f;
         blackoutCanvas.blocksRaycasts = false;
         blackoutCanvas.interactable = false;
     }
-
+    public void met_GameOver()
+    {
+        if (!isGameOver)
+        {
+            isGameOver = true;
+            met_BlackoutSetup();
+            StartCoroutine(ien_Blackout());
+        }
+    }
     void met_BlackoutSetup()
     {
         blackoutCanvas.alpha = 0f;
         blackoutCanvas.blocksRaycasts = true;
         blackoutCanvas.interactable = true;
     }
-    public void met_StartBlackout()
-    {
-        met_BlackoutSetup();
-        StartCoroutine(ien_Blackout());
-    }
     IEnumerator ien_Blackout()
     {
-        while (blackoutCanvas.alpha <1f)
+        float elapsedTime = 0;
+        while (elapsedTime < transitionTime)
         {
-            // blackoutCanvas.alpha
+            blackoutCanvas.alpha = Mathf.Lerp(blackoutCanvas.alpha, 1f, elapsedTime / transitionTime);
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
         }
-        yield return new WaitForEndOfFrame();
     }
 }
