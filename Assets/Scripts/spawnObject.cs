@@ -5,7 +5,8 @@ public class spawnObject : MonoBehaviour
 {
     // SpriteRenderer sr;
     public GameObject bonus;
-    public float durataAttesa;
+    public float spawnStartDelay;
+    public float spawnDelay;
     // public int i;
     // public int iterationCount;
     public float posXMin;
@@ -42,9 +43,9 @@ public class spawnObject : MonoBehaviour
     {
         while (gameObject.activeSelf)
         {
-            yield return new WaitForSeconds(durataAttesa);
+            yield return new WaitForSeconds(spawnDelay);
             // sr = GetComponent<SpriteRenderer>();
-            Invoke("SpawnNext", 2f);
+            Invoke("SpawnNext", spawnStartDelay);
         }
     }
 
