@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
         
         // rb.velocity.x>-0.1f)
         // rb.AddForce(new Vector2(orizzontale*speed,0));
+        if (rb.velocity.y<-1)
+        {
+            Debug.Log("cadoooooo");
+            rb.AddForce(new Vector2(0,-10));
+        }
     }
     public void Move(InputAction.CallbackContext context)
     {
@@ -29,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         if(context.performed && grounded)
         {
-            rb.velocity=new Vector2(rb.velocity.y,jumpPower);
+            rb.velocity=new Vector2(rb.velocity.x,jumpPower);
         }
     }
     void OnCollisionEnter2D(Collision2D other) {
