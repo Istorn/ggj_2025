@@ -4,7 +4,6 @@ public class PlayerPickup : MonoBehaviour
 {
     public PointsManager pointsManager;
     Rigidbody2D rb;
-    public int massAdd;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -14,8 +13,13 @@ public class PlayerPickup : MonoBehaviour
     {
         if(other.gameObject.tag =="bonus")
         {
-            pointsManager.met_AggiungiPunti(50);
-            rb.mass += massAdd;
+            float punteggio = other.gameObject.GetComponent<BonusPoints>().actualPoints;
+            pointsManager.met_AggiungiPunti(Mathf.FloorToInt(punteggio*100));
+
+            rb.mass += punteggio/5;
+            rb.gameObject.GetComponent<PlayerController>().speed += 5*punteggio;
+            rb.gameObject.GetComponent<Transform>().localScale += new UnityEngine.Vector3(1f*punteggio/50, 1f*punteggio/50, 1f);
+
             Destroy(other.gameObject);
         }
     }
