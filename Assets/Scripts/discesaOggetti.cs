@@ -13,7 +13,7 @@ public class discesaOggetti : MonoBehaviour
     public bool fermato = false;
     void Start()
     {
-        minHeight = Random.Range(1,8);
+        minHeight = Random.Range(1,4);
 
         // Assicuriamoci che l'oggetto abbia un Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
