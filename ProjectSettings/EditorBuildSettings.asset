@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LorenzoTestScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Intro.unity
+    guid: e7e9666b6a99344fd971e78209006a1e
+  - enabled: 1
+    path: Assets/Scenes/MasterScene.unity
+    guid: 25f71708a2ecf304abfb4a60bc0a7f01
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 235c35b995d444e15a280786afe7e8c1
   m_configObjects: {}
