@@ -10,9 +10,9 @@ public class PlayerPickup : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void OnTriggerEnter2D (Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if(CompareTag("bonus"))
+        if(other.gameObject.tag =="bonus")
         {
             pointsManager.met_AggiungiPunti(50);
             rb.mass += massAdd;
