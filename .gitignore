@@ -50,7 +50,7 @@ Desktop.ini
 *.booproj
 *.svd
 *.tmp
-
+.vs
 # MonoDevelop
 *.pidb
 
