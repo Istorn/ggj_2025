@@ -330,11 +330,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2360234785433846799, guid: b98eb85c132953342b0644a09de5090b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.72
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2360234785433846799, guid: b98eb85c132953342b0644a09de5090b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2360234785433846799, guid: b98eb85c132953342b0644a09de5090b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1433,7 +1433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 101867623524728593, guid: d41274e4344f868489d46958a5d753ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.1094
+      value: 23.609402
       objectReference: {fileID: 0}
     - target: {fileID: 101867623524728593, guid: d41274e4344f868489d46958a5d753ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1581,7 +1581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 101867623524728593, guid: d41274e4344f868489d46958a5d753ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.8
+      value: 23.3
       objectReference: {fileID: 0}
     - target: {fileID: 101867623524728593, guid: d41274e4344f868489d46958a5d753ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3053,11 +3053,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2360234785433846799, guid: b98eb85c132953342b0644a09de5090b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.77
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 2360234785433846799, guid: b98eb85c132953342b0644a09de5090b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2360234785433846799, guid: b98eb85c132953342b0644a09de5090b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3539,6 +3539,7 @@ MonoBehaviour:
   spawnDelay: 5
   posXMin: 3
   posXMax: -3
+  isSpawningBonus: 0
 --- !u!114 &1822828127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3966,7 +3967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 101867623524728593, guid: d41274e4344f868489d46958a5d753ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 101867623524728593, guid: d41274e4344f868489d46958a5d753ed, type: 3}
       propertyPath: m_LocalPosition.z
