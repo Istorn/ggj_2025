@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8936587034749616507}
   - component: {fileID: 787262087758653162}
   - component: {fileID: 5204189199163947493}
+  - component: {fileID: 8302775419524819382}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -322,3 +323,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.6394982}
   m_EdgeRadius: 0
+--- !u!114 &8302775419524819382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815449045784697988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d693473aacf181743a20bb63cd475faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepAudioSource: {fileID: 0}
+  footstepClip: {fileID: 0}
+  pitchRange: 2
+  stepInterval: 0.5
