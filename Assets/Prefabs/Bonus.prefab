@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2631790942727861982}
   - component: {fileID: -8441444672648318405}
   - component: {fileID: 1286783988205340050}
+  - component: {fileID: -5681240997728452245}
   m_Layer: 0
   m_Name: Bonus
   m_TagString: bonus
@@ -166,3 +167,18 @@ MonoBehaviour:
   slowFallSpeed: 1.2
   delay: 0.04
   fermato: 0
+--- !u!114 &-5681240997728452245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54710468587176262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61ab9e584a4fb94fb3ad863029d9aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minPoints: 1
+  maxPoints: 5
+  actualPoints: 0

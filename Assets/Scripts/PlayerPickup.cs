@@ -18,7 +18,7 @@ public class PlayerPickup : MonoBehaviour
 
             rb.mass += punteggio/5;
             rb.gameObject.GetComponent<PlayerController>().speed += 5*punteggio;
-            rb.gameObject.GetComponent<Transform>().localScale += new UnityEngine.Vector3(1f*punteggio/50, 1f*punteggio/50, 1f);
+            rb.gameObject.GetComponent<Transform>().localScale += new Vector3(1f*punteggio/50, 1f*punteggio/50, 1f);
 
             Destroy(other.gameObject);
         }
