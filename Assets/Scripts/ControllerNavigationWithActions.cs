@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class ControllerNavigationWithActions : MonoBehaviour
 {
+    private float navigationCooldown = 0.2f; // Cooldown time in seconds
+    private float nextNavigationTime = 0f;  
+    
     // UI Navigation
     public Button[] buttons; // Assign buttons in the Inspector
     private int selectedIndex = 0;
@@ -49,21 +52,31 @@ public class ControllerNavigationWithActions : MonoBehaviour
     }
 
     private void OnNavigate(InputAction.CallbackContext context)
-    {
-        // Get the input direction (Vector2)
-        Vector2 input = context.ReadValue<Vector2>();
+{
+    // Get the current time
+    float currentTime = Time.time;
 
-        if (input.y > 0.5f) // Move Up
-        {
-            MoveSelection(-1);
-            Debug.Log("Navigated Up");
-        }
-        else if (input.y < -0.5f) // Move Down
-        {
-            MoveSelection(1);
-            Debug.Log("Navigated Down");
-        }
+    // Check if enough time has passed since the last navigation
+    if (currentTime < nextNavigationTime)
+        return;
+
+    // Get the input direction (Vector2)
+    Vector2 input = context.ReadValue<Vector2>();
+
+    if (input.y > 0.5f) // Move Up
+    {
+        MoveSelection(-1);
+        Debug.Log("Navigated Up");
     }
+    else if (input.y < -0.5f) // Move Down
+    {
+        MoveSelection(1);
+        Debug.Log("Navigated Down");
+    }
+
+    // Set the next allowed navigation time
+    nextNavigationTime = currentTime + navigationCooldown;
+}
 
     private void OnSubmit(InputAction.CallbackContext context)
     {
