@@ -291,7 +291,9 @@ MonoBehaviour:
   buttons:
   - {fileID: 457933627}
   - {fileID: 1799350144}
-  inputActions: {fileID: -944628639613478452, guid: 266c0aa968f1c3a449a2083322077a19, type: 3}
+  inputActions: {fileID: -944628639613478452, guid: b3264dc57e56b4c44ab9f93808d87537, type: 3}
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  highlightedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &342970996
 GameObject:
   m_ObjectHideFlags: 0
@@ -3404,6 +3406,7 @@ MonoBehaviour:
   blackoutCanvas: {fileID: 1980593716}
   transitionTime: 1
   isGameOver: 0
+  controllerNavigation: {fileID: 281688543}
 --- !u!114 &1822828128
 MonoBehaviour:
   m_ObjectHideFlags: 0
