@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
 {
-    public CanvasManager canvasManager;
+    CanvasManager canvasManager;
     spawnObject objectSpawner;
+    PointsManager pointsManager;
     private void Start()
     {
-        canvasManager.met_BlackoutOff();
+        canvasManager = GetComponent<CanvasManager>();
         objectSpawner = GetComponent<spawnObject>();
+        pointsManager = GetComponent<PointsManager>();
+
+        canvasManager.met_BlackoutOff();
     }
     public void met_GameOver()
     {

@@ -24,8 +24,7 @@ public class MainMenuCanvasManager : MonoBehaviour
     void met_ShowCanvas(CanvasGroup canvasGroup)
     {
         canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.interactable = true;
+        
     }
 
     public void met_StartTransition()
@@ -35,6 +34,9 @@ public class MainMenuCanvasManager : MonoBehaviour
 
     IEnumerator ien_StartTransition(CanvasGroup canvasGroup)
     {
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.interactable = true;
+
         float elapsedTime = 0;
         while (elapsedTime < transitionTime)
         {
@@ -44,6 +46,5 @@ public class MainMenuCanvasManager : MonoBehaviour
             yield return null;
         }
         met_HideCanvas(mainMenuCanvas);
-        met_ShowCanvas(playerSelectionCanvas);
     }
 }
