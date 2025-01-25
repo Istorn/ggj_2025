@@ -7,6 +7,7 @@ public class PlayerPickup : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        pointsManager = FindObjectOfType<PointsManager>();
     }
 
     void OnCollisionEnter2D(Collision2D other)
