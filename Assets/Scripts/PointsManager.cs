@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public class PointsManager : MonoBehaviour
 
     public Text topScore1, topScore2, topScore3;
 
-    List<int> scores;
+    List<int> scores = new List<int>();
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +45,7 @@ public class PointsManager : MonoBehaviour
         if (!File.Exists(filePath))
             {
                 Debug.Log("File does not exists");
+                Debug.Log(filePath);
                 File.Create(filePath).Close();
             }
         else
@@ -52,6 +54,7 @@ public class PointsManager : MonoBehaviour
             {
                 if (int.TryParse(line, out int score))
                 {
+                    Debug.Log(score);
                     scores.Add(score);
                 }
             }
@@ -79,21 +82,18 @@ public class PointsManager : MonoBehaviour
     {
         Debug.LogError("Points manager game over");
 
-        scores = LoadScores(Resources.Load<TextAsset>("scores").ToString());
-        if (scores.Count() >0){
-            topScore1.text = scores[0].ToString();
-            topScore2.text = scores.Count>1? scores[1].ToString(): "";
-            topScore3.text = scores.Count>2? scores[2].ToString(): "";
-        }else{
-            AddScore(scores,getCurrentScore());
-            SaveScores(Resources.Load<TextAsset>("scores").ToString(),scores);
-            scores = LoadScores(Resources.Load<TextAsset>("scores").ToString());
-            topScore1.text = scores[0].ToString();
-            topScore2.text = scores.Count>1? scores[1].ToString(): "";
-            topScore3.text = scores.Count>2? scores[2].ToString(): "";
+        
+        AddScore(scores,getCurrentScore());
+        SaveScores("scores.txt",scores);
+        scores = LoadScores("scores.txt");
 
-
-        }
+        Debug.Log("adwfadsfasdasd");
+        Debug.Log(scores[scores.Count - 1]);
+            
+        
+        topScore1.text = scores[scores[scores.Count - 1]].ToString();
+        topScore2.text = scores.Count>1? scores[scores.Count - 2].ToString(): "";
+        topScore3.text = scores.Count>2? scores[scores.Count - 3].ToString(): "";
         
     }
 }
