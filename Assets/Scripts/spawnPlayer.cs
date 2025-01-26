@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class spawnPlayer : MonoBehaviour
@@ -10,8 +8,27 @@ public class spawnPlayer : MonoBehaviour
     GameObject istanzaPlayer;
     public Sprite[] visi;
     public Color[] coloriElmetti;
-    // Start is called before the first frame update
     void Start()
+    {
+        numeroGiocatori = 1;
+    }
+
+    public void met_AddPlayer()
+    {
+        if(numeroGiocatori<4)
+        {
+            numeroGiocatori++;
+        }
+    }
+    public void met_RemovePlayer()
+    {
+        if(numeroGiocatori>1)
+        {
+            numeroGiocatori--;
+        }    
+    }
+    // Start is called before the first frame update
+    public void met_StartGame()
     {
         for (int i = 0; i < numeroGiocatori; i++)
         {
@@ -19,5 +36,6 @@ public class spawnPlayer : MonoBehaviour
             istanzaPlayer.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite=visi[i];
             istanzaPlayer.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color=coloriElmetti[i];
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 }
