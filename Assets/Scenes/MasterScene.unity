@@ -613,6 +613,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: spawnPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 7857755828629219003, guid: fcb64a6903fe79945a889a72ab2b9734, type: 3}
+      propertyPath: numeroGiocatori
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7918235705992623170, guid: fcb64a6903fe79945a889a72ab2b9734, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
