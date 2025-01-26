@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
@@ -6,6 +7,7 @@ public class GameplayManager : MonoBehaviour
     spawnObject objectSpawner;
     PointsManager pointsManager;
     spawnPlayer spawnPlayer;
+
     private void Start()
     {
         canvasManager = GetComponent<CanvasManager>();
@@ -18,9 +20,8 @@ public class GameplayManager : MonoBehaviour
     }
     public void met_GameOver()
     {
-        canvasManager.met_GameOver();
         objectSpawner.isSpawningBonus = false;
-        // Interrompere lo spawn dei bonus
-        // Immobilizzare i player e disattivarne le collisioni
+        pointsManager.met_GameOver();
+        canvasManager.met_GameOver();
     }
 }

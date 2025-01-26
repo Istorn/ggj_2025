@@ -176,6 +176,61 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "ArrowKeys",
+                    "id": "934261e3-b187-400b-912f-36c7f0935331",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "e8e4a49e-d241-4242-812b-d7f155f75dec",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "498be2a1-ebd7-4e16-9eb7-372c7903aea1",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "72170359-25b4-47ac-a97f-4d877fd57daa",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "36988cd9-7b3b-4780-a7b2-58089a14ab61",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "c1f7a91b-d0fd-4a62-997e-7fb9b69bf235",
                     "path": "<Gamepad>/rightStick",
@@ -281,6 +336,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8672e1f9-16ec-44c4-a424-d87068c356a3",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf023f5b-60d4-4872-9c63-2125f1c92d16",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -693,7 +693,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -30, y: 30}
-  m_SizeDelta: {x: 500, y: 90}
+  m_SizeDelta: {x: 219.3253, y: 90}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &990818965
 MonoBehaviour:
@@ -990,18 +990,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c6a88cac649165c43b745fa7f531caf6, type: 3}
-    m_FontSize: 53
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 54
+    m_MinSize: 6
+    m_MaxSize: 64
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Comincia a giocare
+  m_Text: Inizia
 --- !u!222 &1089915507
 CanvasRenderer:
   m_ObjectHideFlags: 0

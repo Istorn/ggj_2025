@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,7 +10,7 @@ public class PointsManager : MonoBehaviour
     public Text punti_ui;
     public Text puntiGameOver;
 
-    
+    public Text topScore1, topScore2, topScore3;
 
     List<int> scores;
     // Start is called before the first frame update
@@ -60,7 +59,7 @@ public class PointsManager : MonoBehaviour
             scores.Sort((a, b) => b.CompareTo(a));
         }
 
-            return scores;
+        return scores;
     } 
 
     public void AddScore(List<int> scores, int scoreToAdd){
@@ -75,5 +74,11 @@ public class PointsManager : MonoBehaviour
         File.WriteAllLines(filePath,scores.Select(score => score.ToString()));
     }
     
-
+    public void met_GameOver()
+    {
+        scores = LoadScores("Assets/Resources/scores.txt");
+        topScore1.text = scores[0].ToString();
+        topScore2.text = scores[1].ToString();
+        topScore3.text = scores[2].ToString();
+    }
 }
