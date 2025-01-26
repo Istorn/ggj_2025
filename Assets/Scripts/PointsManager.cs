@@ -76,7 +76,9 @@ public class PointsManager : MonoBehaviour
     
     public void met_GameOver()
     {
-        scores = LoadScores("Assets/Resources/scores.txt");
+        Debug.LogError("Points manager game over");
+
+        scores = LoadScores(Resources.Load<TextAsset>("scores").ToString());
         topScore1.text = scores[0].ToString();
         topScore2.text = scores[1].ToString();
         topScore3.text = scores[2].ToString();
