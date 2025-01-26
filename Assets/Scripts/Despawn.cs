@@ -9,6 +9,8 @@ public class Despawn : MonoBehaviour
         {
             gameplayManager.met_GameOver();
             Debug.Log("Game Over");
+           //AudioSource audioSource = GetComponent<AudioSource>();
+           //audioSource.Play();
         }
         else if (collision.gameObject.CompareTag("bonus"))
         {

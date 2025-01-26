@@ -14,7 +14,9 @@ public class PlayerPickup : MonoBehaviour
         if(other.gameObject.tag =="bonus")
         {
             float punteggio = other.gameObject.GetComponent<BonusPoints>().actualPoints;
+            Debug.Log( other.gameObject.GetComponent<BonusPoints>().actualPoints);
             pointsManager.met_AggiungiPunti(Mathf.FloorToInt(punteggio*100));
+            Debug.Log(punteggio);
 
             rb.mass += punteggio/5;
             rb.gameObject.GetComponent<PlayerController>().speed += 5*punteggio;
