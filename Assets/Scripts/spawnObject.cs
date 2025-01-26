@@ -11,10 +11,12 @@ public class spawnObject : MonoBehaviour
     // public int iterationCount;
     public float posXMin;
     public float posXMax;
+    public bool isSpawningBonus;
 
     // Start is called before the first frame update
     void Start()
     {
+        isSpawningBonus = true;
         StartCoroutine(gestioneTempo());
     }
 
@@ -41,7 +43,7 @@ public class spawnObject : MonoBehaviour
 
     IEnumerator gestioneTempo()
     {
-        while (gameObject.activeSelf)
+        while (isSpawningBonus)
         {
             yield return new WaitForSeconds(spawnDelay);
             // sr = GetComponent<SpriteRenderer>();

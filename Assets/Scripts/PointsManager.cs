@@ -1,10 +1,11 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class PointsManager : MonoBehaviour
 {
     public int punteggioSquadra;
-    public TextMeshProUGUI punti_ui;
+    public Text punti_ui;
+    public Text puntiGameOver;
     
     // Start is called before the first frame update
     void Start()
@@ -22,5 +23,6 @@ public class PointsManager : MonoBehaviour
     {
         punteggioSquadra += puntiDaAggiungere;
         punti_ui.text = punteggioSquadra.ToString();
+        puntiGameOver.text = "Punti: "+punteggioSquadra.ToString();
     }
 }
