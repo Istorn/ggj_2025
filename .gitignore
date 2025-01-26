@@ -1,4 +1,7 @@
 # ========== Unity-specific ==========
+# ========== Builds ==========
+
+*.app
 
 # Ignore Auto-Generated folders
 [Ll]ibrary/
