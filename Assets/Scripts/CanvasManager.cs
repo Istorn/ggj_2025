@@ -29,12 +29,8 @@ public class CanvasManager : MonoBehaviour
     }
     public void met_GameOver()
     {
-        Debug.LogError("Canvas Manager Game over started");
-
         if (!isGameOver)
         {
-            Debug.LogError("Canvas Manager: Is it not yet game over?");
-
             isGameOver = true;
             // Store new score
             List<int> currentScores= pointsManager.LoadScores("Assets/Resources/scores.txt");

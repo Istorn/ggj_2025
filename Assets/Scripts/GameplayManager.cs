@@ -16,11 +16,9 @@ public class GameplayManager : MonoBehaviour
 
         canvasManager.met_BlackoutOff();
         spawnPlayer.met_StartGame();
-        Debug.LogError("Game is started");
     }
     public void met_GameOver()
     {
-        Debug.LogError("Game over started");
         objectSpawner.isSpawningBonus = false;
         pointsManager.met_GameOver();
         canvasManager.met_GameOver();
