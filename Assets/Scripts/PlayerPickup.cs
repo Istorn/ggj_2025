@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
 {
+    public AudioSource bonusAudioSource;
+    public AudioClip bonusAudioClip;
     public PointsManager pointsManager;
     Rigidbody2D rb;
     private void Start()
@@ -22,6 +24,10 @@ public class PlayerPickup : MonoBehaviour
             rb.gameObject.GetComponent<Transform>().localScale += new Vector3(1f*punteggio/50, 1f*punteggio/50, 1f);
 
             Destroy(other.gameObject);
+
+            bonusAudioSource.clip = bonusAudioClip;
+            bonusAudioSource.Stop();
+            bonusAudioSource.Play();
         }
     }
 }

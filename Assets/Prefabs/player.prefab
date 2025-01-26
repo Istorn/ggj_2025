@@ -281,6 +281,8 @@ MonoBehaviour:
   speed: 20
   jumpPower: 7
   grounded: 0
+  jumpAudioSource: {fileID: 8362840568293388588}
+  jumpAudioClip: {fileID: 8300000, guid: 2a2a57f54d305b04d957727248124b23, type: 3}
 --- !u!114 &6209622864227280538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a447e17cf6d827409662972c245201f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusAudioSource: {fileID: 8362840568293388588}
+  bonusAudioClip: {fileID: 8300000, guid: d568e98246ce37545b6d0ada8d2bf2c0, type: 3}
   pointsManager: {fileID: 0}
 --- !u!61 &5204189199163947493
 BoxCollider2D:
@@ -346,7 +350,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3815449045784697988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d693473aacf181743a20bb63cd475faa, type: 3}
   m_Name: 
@@ -367,7 +371,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.37
   m_Pitch: 1
   Loop: 0
   Mute: 0
