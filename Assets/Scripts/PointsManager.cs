@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +9,10 @@ public class PointsManager : MonoBehaviour
     public int punteggioSquadra;
     public Text punti_ui;
     public Text puntiGameOver;
-    
+
+    public Text topScore1, topScore2, topScore3;
+
+    List<int> scores;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +30,55 @@ public class PointsManager : MonoBehaviour
         punteggioSquadra += puntiDaAggiungere;
         punti_ui.text = punteggioSquadra.ToString();
         puntiGameOver.text = "Punti: "+punteggioSquadra.ToString();
+    }
+
+    public int getCurrentScore(){
+        return punteggioSquadra;
+    }
+
+
+    public List<int> LoadScores(string filePath) {
+
+        List<int> scores = new List<int>();
+
+        if (!File.Exists(filePath))
+            {
+                File.Create(filePath).Close();
+            }
+        else
+        {
+            foreach (string line in File.ReadAllLines(filePath))
+            {
+                if (int.TryParse(line, out int score))
+                {
+                    scores.Add(score);
+                }
+            }
+
+            // Sort the scores in descending order
+            scores.Sort((a, b) => b.CompareTo(a));
+        }
+
+        return scores;
+    } 
+
+    public void AddScore(List<int> scores, int scoreToAdd){
+        scores.Add(scoreToAdd);
+
+        // Keep the order
+
+        scores.Sort((score1,score2) => score2.CompareTo(score1));
+    }
+
+    public void SaveScores(string filePath, List<int> scores){
+        File.WriteAllLines(filePath,scores.Select(score => score.ToString()));
+    }
+    
+    public void met_GameOver()
+    {
+        scores = LoadScores("Assets/Resources/scores.txt");
+        topScore1.text = scores[0].ToString();
+        topScore2.text = scores[1].ToString();
+        topScore3.text = scores[2].ToString();
     }
 }
