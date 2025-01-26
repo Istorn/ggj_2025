@@ -17,7 +17,8 @@ public class spawnObject : MonoBehaviour
     void Start()
     {
         isSpawningBonus = true;
-        StartCoroutine(gestioneTempo());
+        Invoke("PrimoSpawn", spawnStartDelay);
+        
     }
 
     // Update is called once per frame
@@ -45,15 +46,22 @@ public class spawnObject : MonoBehaviour
     {
         while (isSpawningBonus)
         {
+             GameObject FallingEggs = Instantiate(bonus, new Vector3(Random.Range(posXMin, posXMax), 7f, 0f), Quaternion.identity);
             yield return new WaitForSeconds(spawnDelay);
+            spawnDelay=spawnDelay*0.9f;
+            if (spawnDelay < 1f)spawnDelay=1f;
             // sr = GetComponent<SpriteRenderer>();
-            Invoke("SpawnNext", spawnStartDelay);
+            
         }
     }
 
-    void SpawnNext()
+    // void SpawnNext()
+    // {
+    //     GameObject FallingEggs = Instantiate(bonus, new Vector3(Random.Range(posXMin, posXMax), 7f, 0f), Quaternion.identity);
+    //     // FallingEggs.transform.position = new Vector3(Random.Range(posXMin, posXMax), posYMin, posYMax);
+    // }
+    void PrimoSpawn()
     {
-        GameObject FallingEggs = Instantiate(bonus, new Vector3(Random.Range(posXMin, posXMax), 7f, 0f), Quaternion.identity);
-        // FallingEggs.transform.position = new Vector3(Random.Range(posXMin, posXMax), posYMin, posYMax);
+        StartCoroutine(gestioneTempo());
     }
 }

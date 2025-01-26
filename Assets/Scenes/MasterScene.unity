@@ -3897,7 +3897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonus: {fileID: 54710468587176262, guid: f848c6997337841a193d81da4c1f18d4, type: 3}
-  spawnStartDelay: 0.2
+  spawnStartDelay: 3
   spawnDelay: 5
   posXMin: 3
   posXMax: -3
