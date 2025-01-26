@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - bonus
+  - collider_bolla
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public float jumpPower;
     float orizzontale;
     public bool grounded;
+
+    public AudioSource jumpAudioSource;
+    public AudioClip jumpAudioClip;
     
     private void FixedUpdate() 
     {
@@ -35,6 +38,9 @@ public class PlayerController : MonoBehaviour
         if(context.performed && grounded)
         {
             rb.velocity=new Vector2(rb.velocity.x,jumpPower);
+            jumpAudioSource.clip = jumpAudioClip;
+            jumpAudioSource.Stop();
+            jumpAudioSource.Play();
         }
     }
     void OnCollisionEnter2D(Collision2D other) {
