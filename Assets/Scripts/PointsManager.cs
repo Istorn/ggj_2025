@@ -78,8 +78,8 @@ public class PointsManager : MonoBehaviour
 
     public void AddScore(List<int> scores, int newScore)
     {
-        // Check if the new score is greater than the lowest score
-        if (newScore > scores[scores.Count - 1])
+        // Only replace the lowest score if the new score is greater and not already in the list
+        if (!scores.Contains(newScore) && newScore > scores[scores.Count - 1])
         {
             scores[scores.Count - 1] = newScore; // Replace the lowest score
             scores.Sort((a, b) => b.CompareTo(a)); // Sort in descending order
@@ -96,13 +96,13 @@ public class PointsManager : MonoBehaviour
         Debug.LogError("Points manager game over");
 
         // Add the current score and ensure only the top 3 scores are kept
-        AddScore(scores,getCurrentScore());
+        AddScore(scores, getCurrentScore());
         SaveScores("scores.txt", scores);
 
         // Update top scores UI
         topScore1.text = scores.Count > 0 ? scores[0].ToString() : "0";
         topScore2.text = scores.Count > 1 ? scores[1].ToString() : "0";
-        topScore3.text = scores.Count > 2 ? scores[2].ToString() : "";
+        topScore3.text = scores.Count > 2 ? scores[2].ToString() : "0";
 
         Debug.Log("Game over. Top scores updated.");
     }
