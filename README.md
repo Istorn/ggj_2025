@@ -1,7 +1,6 @@
+# Tienilo in bolla
 
-# GGJ 2025
-
-Welcome to the **GGJ 2025** repository! This Unity 3D project is created for the **Global Game Jam 2025**. The goal of this project is to deliver a creative and engaging experience within the Game Jam's timeframe.
+Welcome to the **Tienilo in bolla** repository! This Unity 3D project was created for the **Global Game Jam 2025**. The goal of this project is to deliver a creative and engaging experience within the Game Jam's timeframe.
 
 ## Table of Contents
 
@@ -17,7 +16,9 @@ Welcome to the **GGJ 2025** repository! This Unity 3D project is created for the
 
 ## About the Project
 
-**GGJ 2025** is a Unity 3D project built using Unity version **2022.3.8f1**. It aims to deliver [a brief description of the game or application]. The repository contains all assets, scripts, and configurations required for the project.
+**Tienilo in bolla** is a Unity 3D project built using Unity version **2022.3.8f1**. It is a physics-based game where the player must balance objects within a certain area under challenging conditions. Inspired by the theme of **"Balancing"**, the game aims to create a tense yet enjoyable experience with intuitive mechanics and playful visuals.
+
+For more details, visit the game page on the Global Game Jam website: [Tienilo in bolla](https://globalgamejam.org/games/2025/tienilo-bolla-2).
 
 ### Technologies Used
 - Unity **2022.3.8f1**
@@ -33,12 +34,12 @@ To get started with the repository:
 1. **Clone the Repository**:
    Clone the remote repository to your local machine:
    ```bash
-   git clone git@github.com:Istorn/ggj_2025.git
+   git clone git@github.com:Istorn/tienilo_in_bolla.git
    ```
 
 2. **Open in Unity**:
-   - Make sure you have Unity version **[Unity Version]** installed.
-   - Open Unity Hub, click **Add**, and navigate to the cloned `ggj_2025` folder.
+   - Make sure you have Unity version **2022.3.8f1** installed.
+   - Open Unity Hub, click **Add**, and navigate to the cloned `tienilo_in_bolla` folder.
 
 3. **Install Dependencies**:
    If the project uses external plugins or assets:
@@ -80,7 +81,7 @@ To contribute effectively, follow this workflow:
    ```
 
 4. **Open a Merge Request**:
-   - Go to the repository on GitHub: [GGJ 2025 Repository](https://github.com/Istorn/ggj_2025).
+   - Go to the repository on GitHub: [Tienilo in bolla Repository](https://github.com/Istorn/tienilo_in_bolla).
    - Open a Pull Request (PR) to merge your branch into the `master` branch.
    - Add a description and request reviews if needed.
 
@@ -95,22 +96,18 @@ To contribute effectively, follow this workflow:
 
 ## Features
 
-- [Feature 1: Short description]
-- [Feature 2: Short description]
-- [Feature 3: Short description]
-
----
-
-## Contributing
-
-We welcome contributions to the project! Please follow the [Development Workflow](#development-workflow) for all contributions.
+- **Physics-Based Gameplay**: Balance objects in increasingly difficult scenarios.
+- **Dynamic Challenges**: Obstacles and interactions that test the player’s focus and precision.
+- **Simple Controls**: Intuitive mechanics designed for a wide audience.
+- **Thematic Design**: Playful visuals inspired by the theme of "Balancing."
 
 ---
 
 ## License
 
-YET TO BE DONE
+The license for this project will be added soon.
 
 ---
 
 
+Enjoy playing and contributing to **Tienilo in bolla**!
