@@ -19,6 +19,15 @@ public class PointsManager : MonoBehaviour
     {
         // Use Application.persistentDataPath for the file path
         filePath = Path.Combine(Application.persistentDataPath, "scores.txt");
+
+        // Ensure the directory exists
+        string directoryPath = Path.GetDirectoryName(filePath);
+        if (!Directory.Exists(directoryPath))
+        {
+            Directory.CreateDirectory(directoryPath);
+            Debug.Log("Created directory: " + directoryPath);
+        }
+
         Debug.Log("Score file path: " + filePath);
 
         met_ResetPunti();
@@ -57,17 +66,16 @@ public class PointsManager : MonoBehaviour
         // Check if the file exists
         if (!File.Exists(filePath))
         {
-            Debug.Log("File does not exist. Creating a new one.");
-            File.Create(filePath).Close();
+            Debug.LogWarning("File does not exist. Creating a new one.");
+            File.WriteAllText(filePath, "0\n0\n0"); // Create a file with default scores
         }
-        else
+
+        // Read and parse scores
+        foreach (string line in File.ReadAllLines(filePath))
         {
-            foreach (string line in File.ReadAllLines(filePath))
+            if (int.TryParse(line, out int score))
             {
-                if (int.TryParse(line, out int score))
-                {
-                    scores.Add(score);
-                }
+                scores.Add(score);
             }
         }
 
@@ -93,7 +101,9 @@ public class PointsManager : MonoBehaviour
 
     public void SaveScores(string filePath, List<int> scores)
     {
+        // Write scores back to the file
         File.WriteAllLines(filePath, scores.Select(score => score.ToString()));
+        Debug.Log("Scores saved successfully at: " + filePath);
     }
 
     public void met_GameOver()
