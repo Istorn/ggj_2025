@@ -3834,7 +3834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cffe6fb4ba19c4946a9e129d9c86f2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numeroGiocatori: 4
+  numeroGiocatori: 1
   puntiDiSpawn:
   - {fileID: 670766509}
   - {fileID: 414756397}
