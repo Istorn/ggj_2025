@@ -18,7 +18,7 @@ public class PointsManager : MonoBehaviour
     void Start()
     {
         // Use Application.persistentDataPath for the file path
-        filePath = Path.Combine(Application.persistentDataPath, "scores.txt");
+        filePath = Path.Combine("./","scores.txt");
 
         // Ensure the directory exists
         string directoryPath = Path.GetDirectoryName(filePath);
@@ -31,12 +31,22 @@ public class PointsManager : MonoBehaviour
         Debug.Log("Score file path: " + filePath);
 
         met_ResetPunti();
-        scores = LoadScores(filePath);
+
+        // Attempt to load scores
+        try
+        {
+            scores = LoadScores(filePath);
+        }
+        catch (IOException ex)
+        {
+            Debug.LogError($"Failed to load scores: {ex.Message}");
+            scores = new List<int> { 0, 0, 0 }; // Default scores if loading fails
+        }
 
         // Ensure there are exactly 3 scores
         while (scores.Count < 3)
         {
-            scores.Add(0); // Fill missing slots with 0
+            scores.Add(0);
         }
     }
 
@@ -63,20 +73,27 @@ public class PointsManager : MonoBehaviour
         Debug.Log("Reading file scores");
         List<int> scores = new List<int>();
 
-        // Check if the file exists
-        if (!File.Exists(filePath))
+        try
         {
-            Debug.LogWarning("File does not exist. Creating a new one.");
-            File.WriteAllText(filePath, "0\n0\n0"); // Create a file with default scores
-        }
-
-        // Read and parse scores
-        foreach (string line in File.ReadAllLines(filePath))
-        {
-            if (int.TryParse(line, out int score))
+            // Check if the file exists
+            if (!File.Exists(filePath))
             {
-                scores.Add(score);
+                Debug.LogWarning("File does not exist. Creating a new one with default scores.");
+                File.WriteAllText(filePath, "0\n0\n0"); // Create a file with default scores
             }
+
+            // Read and parse scores
+            foreach (string line in File.ReadAllLines(filePath))
+            {
+                if (int.TryParse(line, out int score))
+                {
+                    scores.Add(score);
+                }
+            }
+        }
+        catch (IOException ex)
+        {
+            Debug.LogError($"Error reading scores from file: {ex.Message}");
         }
 
         // Ensure there are exactly 3 scores
@@ -101,9 +118,16 @@ public class PointsManager : MonoBehaviour
 
     public void SaveScores(string filePath, List<int> scores)
     {
-        // Write scores back to the file
-        File.WriteAllLines(filePath, scores.Select(score => score.ToString()));
-        Debug.Log("Scores saved successfully at: " + filePath);
+        try
+        {
+            // Write scores back to the file
+            File.WriteAllLines(filePath, scores.Select(score => score.ToString()));
+            Debug.Log("Scores saved successfully at: " + filePath);
+        }
+        catch (IOException ex)
+        {
+            Debug.LogError($"Failed to save scores: {ex.Message}");
+        }
     }
 
     public void met_GameOver()
