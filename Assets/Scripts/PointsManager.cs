@@ -38,11 +38,12 @@ public class PointsManager : MonoBehaviour
 
 
     public List<int> LoadScores(string filePath) {
-
+        Debug.Log("read file scores");
         List<int> scores = new List<int>();
 
         if (!File.Exists(filePath))
             {
+                Debug.Log("File does not exists");
                 File.Create(filePath).Close();
             }
         else
@@ -79,8 +80,20 @@ public class PointsManager : MonoBehaviour
         Debug.LogError("Points manager game over");
 
         scores = LoadScores(Resources.Load<TextAsset>("scores").ToString());
-        topScore1.text = scores[0].ToString();
-        topScore2.text = scores[1].ToString();
-        topScore3.text = scores[2].ToString();
+        if (scores.Count() >0){
+            topScore1.text = scores[0].ToString();
+            topScore2.text = scores.Count>1? scores[1].ToString(): "";
+            topScore3.text = scores.Count>2? scores[2].ToString(): "";
+        }else{
+            AddScore(scores,getCurrentScore());
+            SaveScores(Resources.Load<TextAsset>("scores").ToString(),scores);
+            scores = LoadScores(Resources.Load<TextAsset>("scores").ToString());
+            topScore1.text = scores[0].ToString();
+            topScore2.text = scores.Count>1? scores[1].ToString(): "";
+            topScore3.text = scores.Count>2? scores[2].ToString(): "";
+
+
+        }
+        
     }
 }
