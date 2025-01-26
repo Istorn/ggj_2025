@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Video;
 
 public class MainMenuCanvasManager : MonoBehaviour
 {
     public CanvasGroup mainMenuCanvas;
     public CanvasGroup playerSelectionCanvas;
     public float transitionTime;
+    public VideoPlayer videoPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,15 @@ public class MainMenuCanvasManager : MonoBehaviour
 
     IEnumerator ien_StartTransition(CanvasGroup canvasGroup)
     {
+        met_HideCanvas(mainMenuCanvas);
+        videoPlayer.Play();
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log(videoPlayer.isPlaying);
+        while (videoPlayer.isPlaying)
+        {
+            yield return null;
+        }
+
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;
 
@@ -45,6 +56,5 @@ public class MainMenuCanvasManager : MonoBehaviour
 
             yield return null;
         }
-        met_HideCanvas(mainMenuCanvas);
     }
 }
