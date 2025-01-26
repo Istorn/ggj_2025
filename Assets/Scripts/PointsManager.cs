@@ -13,11 +13,16 @@ public class PointsManager : MonoBehaviour
     public Text topScore1, topScore2, topScore3;
 
     private List<int> scores = new List<int>();
+    private string filePath;
 
     void Start()
     {
+        // Use Application.persistentDataPath for the file path
+        filePath = Path.Combine(Application.persistentDataPath, "scores.txt");
+        Debug.Log("Score file path: " + filePath);
+
         met_ResetPunti();
-        scores = LoadScores("scores.txt");
+        scores = LoadScores(filePath);
 
         // Ensure there are exactly 3 scores
         while (scores.Count < 3)
@@ -49,10 +54,10 @@ public class PointsManager : MonoBehaviour
         Debug.Log("Reading file scores");
         List<int> scores = new List<int>();
 
+        // Check if the file exists
         if (!File.Exists(filePath))
         {
-            Debug.Log("File does not exist");
-            Debug.Log(filePath);
+            Debug.Log("File does not exist. Creating a new one.");
             File.Create(filePath).Close();
         }
         else
@@ -97,7 +102,7 @@ public class PointsManager : MonoBehaviour
 
         // Add the current score and ensure only the top 3 scores are kept
         AddScore(scores, getCurrentScore());
-        SaveScores("scores.txt", scores);
+        SaveScores(filePath, scores);
 
         // Update top scores UI
         topScore1.text = scores.Count > 0 ? scores[0].ToString() : "0";
