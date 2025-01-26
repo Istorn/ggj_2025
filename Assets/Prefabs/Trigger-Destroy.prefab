@@ -144,3 +144,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplayManager: {fileID: 0}
+  music_AudioSource: {fileID: 0}
+  gameOver_Clip: {fileID: 8300000, guid: af1759c73161cf141b960e3eb5583195, type: 3}
